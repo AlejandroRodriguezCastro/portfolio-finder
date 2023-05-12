@@ -1,0 +1,7 @@
+{
+    "editor.detectIndentation": true,
+    "editor.indentSize": "tabSize",
+    "editor.tabSize": 2,
+    "javascript.preferences.quoteStyle": "single",
+    "javascript.format.semicolons": "remove"
+}
