@@ -3,6 +3,7 @@
  */
 
  :root {
+  --primary-color: #555555;
   --background-body: #202b38;
   --background: #161f27;
   --background-alt: #1a242f;
@@ -39,7 +40,7 @@ body {
   margin: 20px auto;
   padding: 0 10px;
   word-wrap: break-word;
-  color: #dbdbdb;
+  color: #ffff;
   color: var(--text-main);
   background: #202b38;
   background: var(--background-body);

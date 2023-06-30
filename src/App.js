@@ -1,34 +1,19 @@
-import { BrowserRouter, Link, Route, Routes, Outlet } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Login from './pages/Login'
-
-const Layout = () => {
-  return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-        </ul>
-      </nav>
-      <Outlet />
-    </>
-  )
-}
+import Login from './components/Login/Login'
+import Navbar from './components/Navbar'
+import Resume from './components/Resume/ResumeNew'
+import './App.css'
+import './style.css'
 
 function App () {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route>
-          <Route path='/home' element={<Layout />} />
-          <Route index element={<Home />} />
-          <Route path='/login' element={<Login />} />
-        </Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/resume' element={<Resume />} />
       </Routes>
     </BrowserRouter>
   )
