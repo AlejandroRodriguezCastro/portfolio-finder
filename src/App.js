@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './components/Login/Login'
+import Contact from './components/Contact/Contact'
 import Navbar from './components/Navbar'
-import Resume from './components/Resume/ResumeNew'
 import './App.css'
 import './style.css'
 
@@ -13,7 +13,7 @@ function App () {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/resume' element={<Resume />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
   )
