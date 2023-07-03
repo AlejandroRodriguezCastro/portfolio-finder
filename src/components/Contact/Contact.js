@@ -1,6 +1,12 @@
 import { Button, Form } from 'react-bootstrap'
+import Card from '../Card/Card'
 
 function Contact () {
+  const getUsers = async () => {
+    const response = await fetch('http://localhost:4000/api/users')
+    const data = await response.json()
+    console.log(data)
+  }
   return (
     <section>
       <Form>
@@ -21,10 +27,11 @@ function Contact () {
           <Form.Label>Mensaje</Form.Label>
           <Form.Control as='textarea' rows={3} placeholder='Mensaje' />
         </Form.Group>
-        <Button variant='primary' type='submit'>
+        <Button onClick={getUsers} variant='primary' type='submit'>
           Submit
         </Button>
       </Form>
+      <Card />
     </section>
   )
 }
