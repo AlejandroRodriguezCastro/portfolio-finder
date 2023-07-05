@@ -1,9 +1,13 @@
-import { Outlet, Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
+import ContactList from '../components/ContactList/ContactList'
+import { useContext } from 'react'
+import { AuthContext } from './AuthContext'
 
 const PrivateRoutes = () => {
-  const auth = { token: true }
+  const { authenticated } = useContext(AuthContext)
+  console.log(authenticated)
   return (
-    auth.token ? <Outlet /> : <Navigate to='/login' />
+    authenticated ? <ContactList /> : <Navigate to='/login' />
   )
 }
 

@@ -1,9 +1,11 @@
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import login from '../../api/login.api'
+import { AuthContext } from '../../utils/AuthContext'
 
-function Login ({ handleLogin }) {
+function Login () {
+  const { handleLogin } = useContext(AuthContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
@@ -21,6 +23,7 @@ function Login ({ handleLogin }) {
 
     const response = await login(email, password)
     if (response.status === 200) {
+      handleLogin()
       navigate('/')
     }
     if (response.status === 401) {
