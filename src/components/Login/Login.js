@@ -1,26 +1,50 @@
-import { Button, Form } from 'react-bootstrap'
 
-function Login () {
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import login from '../../api/login.api'
+
+function Login ({ handleLogin }) {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const response = await login(email, password)
+    if (response.status === 200) {
+      navigate('/')
+    }
+    if (response.status === 401) {
+      alert(response.message)
+    }
+    if (response.status === 500) {
+      alert(response.message)
+    }
+  }
   return (
-    <section>
-      <Form>
-        <Form.Group className='d-flexmb-4 w-50' controlId='formBasicEmail'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' />
-        </Form.Group>
-
-        <Form.Group className='mb-4 w-50' controlId='formBasicPassword'>
-          <Form.Label>Password</Form.Label>
-          <Form.Control type='password' placeholder='Password' />
-        </Form.Group>
-        <Button variant='primary' type='submit'>
-          Submit
-        </Button>
-        <Button variant='secondary' type='submit'>
-          Registrarse
-        </Button>
-      </Form>
-    </section>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input type='email' value={email} onChange={handleEmailChange} required />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type='password' value={password} onChange={handlePasswordChange} required />
+        </div>
+        <button type='submit'>Login</button>
+      </form>
+    </div>
   )
 }
 
