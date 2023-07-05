@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import { useContext } from 'react'
 import { AuthContext } from '../utils/AuthContext'
 import ContactList from '../components/ContactList/ContactList'
+import Register from '../components/Login/Register'
 
 export const RouteMap = () => {
   const { authenticated } = useContext(AuthContext)
@@ -20,6 +21,8 @@ export const RouteMap = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </Router>
   )
