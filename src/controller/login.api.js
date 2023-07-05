@@ -1,3 +1,5 @@
+import urlWebServices from './constants.api.js'
+
 const login = async (email, password) => {
   try {
     const myHeaders = new Headers()
@@ -15,7 +17,7 @@ const login = async (email, password) => {
       redirect: 'follow'
     }
 
-    const response = await fetch('http://localhost:4000/api/users/login', requestOptions)
+    const response = await fetch(urlWebServices.login, requestOptions)
     const jsonData = await response.json()
     console.log(jsonData)
     switch (response.status) {

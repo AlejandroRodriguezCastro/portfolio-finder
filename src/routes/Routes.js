@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from '../pages/Home'
 import Login from '../components/Login/Login'
 import Contact from '../components/Contact/Contact'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/AppBar/Navbar'
 import { useContext } from 'react'
 import { AuthContext } from '../utils/AuthContext'
 import ContactList from '../components/ContactList/ContactList'

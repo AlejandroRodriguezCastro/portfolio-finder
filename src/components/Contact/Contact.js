@@ -1,38 +1,65 @@
-import { Button, Form } from 'react-bootstrap'
-import Card from '../Card/Card'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { saveContact } from '../../controller/contact.api'
 
 function Contact () {
-  const getUsers = async () => {
-    const response = await fetch('http://localhost:4000/api/users')
-    const data = await response.json()
-    console.log(data)
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [message, setMessage] = useState('')
+  const [phone, setPhone] = useState('')
+  const navigate = useNavigate()
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  }
+
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value)
+  }
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const response = await saveContact(name, email, message, phone)
+    if (response.status === 200) {
+      alert(response.message)
+      navigate('/')
+    }
+    if (response.status === 500) {
+      alert(response.message)
+    }
   }
   return (
-    <section>
-      <Form>
-        <Form.Group className='d-flexmb-4 w-50' controlId='formBasicEmail'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' />
-        </Form.Group>
-
-        <Form.Group className='mb-4 w-50' controlId='formBasicName'>
-          <Form.Label>Nombre Completo</Form.Label>
-          <Form.Control type='name' placeholder='Nombre Completo' />
-        </Form.Group>
-        <Form.Group className='mb-4 w-50' controlId='formBasicPhone'>
-          <Form.Label>Telefono</Form.Label>
-          <Form.Control type='phone' placeholder='Telefono' />
-        </Form.Group>
-        <Form.Group className='mb-4 w-50' controlId='formBasiMessage'>
-          <Form.Label>Mensaje</Form.Label>
-          <Form.Control as='textarea' rows={3} placeholder='Mensaje' />
-        </Form.Group>
-        <Button onClick={getUsers} variant='primary' type='submit'>
-          Submit
-        </Button>
-      </Form>
-      <Card />
-    </section>
+    <div>
+      <h2>Contacto</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nombre Completo:</label>
+          <input type='name' value={name} onChange={handleNameChange} required />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type='email' value={email} onChange={handleEmailChange} required />
+        </div>
+        <div>
+          <label>Telefono:</label>
+          <input type='phone' value={phone} onChange={handlePhoneChange} required />
+        </div>
+        <div>
+          <label>Mensaje:</label>
+          <input type='string' value={message} onChange={handleMessageChange} required />
+        </div>
+        <button type='submit'>Enviar</button>
+      </form>
+    </div>
   )
 }
 

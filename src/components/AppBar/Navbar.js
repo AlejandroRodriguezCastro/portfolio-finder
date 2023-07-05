@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import LoginIcon from '@mui/icons-material/Login'
 import EmailIcon from '@mui/icons-material/Email'
 import LogoutIcon from '@mui/icons-material/Logout'
-import { AuthContext } from '../utils/AuthContext'
+import { AuthContext } from '../../utils/AuthContext'
 
 function NavBar () {
   const { handleLogout, authenticated } = useContext(AuthContext)
