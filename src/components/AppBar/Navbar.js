@@ -64,7 +64,7 @@ function NavBar () {
             : null}
           <MenuItem component={Link} to='/contact' key='Contact'>
             <ContactPageIcon sx={{ display: { md: 'flex' }, mr: 1 }} />
-            <Typography textAlign='center'>Contacto</Typography>
+            <Typography textAlign='center'>Contactame</Typography>
           </MenuItem>
         </Toolbar>
       </Container>

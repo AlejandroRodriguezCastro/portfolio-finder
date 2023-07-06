@@ -25,7 +25,7 @@ const saveContact = async (name, phone, email, message) => {
     switch (response.status) {
       case 200:
       {
-        return ({ status: 200, message: 'Contacto creado' })
+        return ({ status: 200, message: 'Mensaje de contacto creado' })
       }
       default:
         return ({ status: 500, message: 'Error interno del servidor' })

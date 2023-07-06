@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import register from '../../controller/register.api'
+import { Grid } from '@mui/material'
 
 function Register () {
   const [email, setEmail] = useState('')
@@ -36,24 +37,32 @@ function Register () {
     }
   }
   return (
-    <div>
-      <h2>Registrarse</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nombre:</label>
-          <input type='name' value={name} onChange={handleNameChange} required />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type='email' value={email} onChange={handleEmailChange} required />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type='password' value={password} onChange={handlePasswordChange} required />
-        </div>
-        <button type='submit'>Register</button>
-      </form>
-    </div>
+    <>
+      <div style={{ marginTop: '60px', padding: '0px' }}>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={8} md={6}>
+            <div>
+              <h2>Registrarse</h2>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <label>Nombre:</label>
+                  <input type='name' value={name} onChange={handleNameChange} required />
+                </div>
+                <div>
+                  <label>Email:</label>
+                  <input type='email' value={email} onChange={handleEmailChange} required />
+                </div>
+                <div>
+                  <label>Password:</label>
+                  <input type='password' value={password} onChange={handlePasswordChange} required />
+                </div>
+                <button type='submit'>Register</button>
+              </form>
+            </div>
+          </Grid>
+        </Grid>
+      </div>
+    </>
   )
 }
 

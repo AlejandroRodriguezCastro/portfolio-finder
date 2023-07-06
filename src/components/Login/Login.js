@@ -3,6 +3,7 @@ import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import login from '../../controller/login.api'
 import { AuthContext } from '../../utils/AuthContext'
+import { Grid } from '@mui/material'
 
 function Login () {
   const { handleLogin } = useContext(AuthContext)
@@ -34,21 +35,29 @@ function Login () {
     }
   }
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type='email' value={email} onChange={handleEmailChange} required />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type='password' value={password} onChange={handlePasswordChange} required />
-        </div>
-        <button type='submit'>Login</button>
-      </form>
-      <button onClick={() => navigate('/register')}>Register</button>
-    </div>
+    <>
+      <div style={{ marginTop: '60px', padding: '0px' }}>
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={8} md={6}>
+            <div>
+              <h2>Login</h2>
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <label>Email:</label>
+                  <input type='email' value={email} onChange={handleEmailChange} required />
+                </div>
+                <div>
+                  <label>Password:</label>
+                  <input type='password' value={password} onChange={handlePasswordChange} required />
+                </div>
+                <button type='submit'>Login</button>
+              </form>
+              <button onClick={() => navigate('/register')}>Register</button>
+            </div>
+          </Grid>
+        </Grid>
+      </div>
+    </>
   )
 }
 
