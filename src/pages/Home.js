@@ -25,7 +25,7 @@ function Home () {
               </h1>
             </Typography>
           </Grid>
-          <Grid item xs={2} sm={4} md={6}>
+          <Grid item xs={12} sm={4} md={6}>
             <img
               src='https://avatars.githubusercontent.com/u/25994021?v=4'
               alt='home pic'
@@ -34,6 +34,17 @@ function Home () {
             />
           </Grid>
         </Grid>
+      </div>
+      <div style={{ marginTop: '60px', padding: '0px' }}>
+        <Typography>
+          <h1 style={{ paddingBottom: 15 }} className='heading'>
+            Acerca de mi{' '}
+          </h1>
+        </Typography>
+        <p style={{ textIndent: '2em' }}>
+          Actualmente soy un desarrollador DevOps orientado a la automatización de networking (donde tengo vasta experiencia), centrado en simplificar procesos y trabajo hacia el usuario. Me defino como una persona proactiva, empeñado en ganar más conocimiento, centrado en la mejora continua.
+          Mi enfoque es dar soluciones efectivas para poder llegar a los objetivos.
+        </p>
       </div>
       <div>
         <Experience />

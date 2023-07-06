@@ -297,8 +297,8 @@ select {
 button {
   background-color: #0c151c;
   background-color: var(--button-base);
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 input[type='submit'] {
@@ -309,7 +309,7 @@ input[type='submit'] {
 }
 
 input[type='reset'] {
-  background-color: #0c151c;
+  background-color: #273845;
   background-color: var(--button-base);
   padding-right: 30px;
   padding-left: 30px;

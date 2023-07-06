@@ -18,7 +18,7 @@ export default function CustomizedTimeline () {
           variant='body2'
           color='text'
         >
-          Present
+          2023 al Presente
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
@@ -101,6 +101,53 @@ export default function CustomizedTimeline () {
           </Typography>
           <Typography variant='subtitle1'>DevOps Engineer</Typography>
           <Typography variant='body2'>Automatizaciones de servidores</Typography>
+          <Typography variant='body2'>Creación de ambiente en Linux</Typography>
+          <Typography variant='body2'>Pipelines CI/CD</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+          sx={{ m: 'auto 0' }}
+          align='right'
+          variant='body2'
+          color='text'
+        >
+          2016-2019
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant='h5' component='span'>
+            Telecom
+          </Typography>
+          <Typography variant='subtitle1'>Referente Tecnico en Networking</Typography>
+          <Typography variant='body2'>Coordinación de equipo</Typography>
+          <Typography variant='body2'>Resolución de problemas de networking</Typography>
+          <Typography variant='body2'>Coordinación de tecnicos a nivel país</Typography>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent
+          sx={{ m: 'auto 0' }}
+          variant='body2'
+          color='text'
+        >
+          2011-2016
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineConnector />
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+          <Typography variant='h5' component='span'>
+            Telecom
+          </Typography>
+          <Typography variant='subtitle1'>Analista de Networking</Typography>
+          <Typography variant='body2'>Configuración de equipos Cisco, Juniper y Huawei</Typography>
           <Typography variant='body2'>Creación de ambiente en Linux</Typography>
           <Typography variant='body2'>Pipelines CI/CD</Typography>
         </TimelineContent>

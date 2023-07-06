@@ -50,9 +50,11 @@ function Login () {
                   <label>Password:</label>
                   <input type='password' value={password} onChange={handlePasswordChange} required />
                 </div>
-                <button type='submit'>Login</button>
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '46%' }}>
+                  <button type='submit'>Login</button>
+                  <button style={{ backgroundColor: '#273845' }} onClick={() => navigate('/register')}>Register</button>
+                </div>
               </form>
-              <button onClick={() => navigate('/register')}>Register</button>
             </div>
           </Grid>
         </Grid>
