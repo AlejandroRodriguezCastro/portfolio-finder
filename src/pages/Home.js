@@ -1,5 +1,6 @@
 import React from 'react'
 import HardSkillsCarousel from '../components/Home/HardSkillsCarousel'
+import Experience from '../components/Home/Experience'
 import { Grid, Typography } from '@mui/material'
 
 function Home () {
@@ -33,6 +34,9 @@ function Home () {
             />
           </Grid>
         </Grid>
+      </div>
+      <div>
+        <Experience />
       </div>
       <div>
         <HardSkillsCarousel />

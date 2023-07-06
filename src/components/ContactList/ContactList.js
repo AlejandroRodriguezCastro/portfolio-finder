@@ -1,22 +1,23 @@
-import ContactCard from './ContactCard'
+// import ContactCard from './ContactCard'
 import * as React from 'react'
-import Grid from '@mui/material/Grid'
-import { styled } from '@mui/material/styles'
+// import Grid from '@mui/material/Grid'
+// import { styled } from '@mui/material/styles'
+import ContactListTable from './ContactListTable'
 
-const useStyles = styled((theme) => ({
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary
-  }
-}))
+// const useStyles = styled((theme) => ({
+//   paper: {
+//     padding: theme.spacing(1),
+//     textAlign: 'center',
+//     color: theme.palette.text.secondary
+//   }
+// }))
 
 export default function ContactList () {
-  const classes = useStyles()
+  // const classes = useStyles()
   return (
-    <div>
-      <h3> Ex 4: Responsive Material UI Grid </h3>
-      <Grid container spacing={1}>
+    <div style={{ marginTop: '100px' }}>
+      <h3> Mensajes </h3>
+      {/* <Grid container spacing={1}>
         <Grid item classes={classes}>
           <ContactCard />
         </Grid>
@@ -28,8 +29,8 @@ export default function ContactList () {
         </Grid>
         <Grid item classes={classes}>
           <ContactCard />
-        </Grid>
-      </Grid>
+        </Grid> */}
+      <ContactListTable />
     </div>
     // <Box sx={{ flexGrow: 1 }}>
     //   <Grid container spacing={2}>
