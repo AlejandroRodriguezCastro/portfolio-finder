@@ -1,18 +1,20 @@
-
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import login from '../../controller/login.api'
-import { AuthContext } from '../../utils/AuthContext'
+import register from '../../controller/register.api'
 import { Grid } from '@mui/material'
 
-function Login () {
-  const { handleLogin } = useContext(AuthContext)
+function Register () {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   const navigate = useNavigate()
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
+  }
+
+  const handleNameChange = (e) => {
+    setName(e.target.value)
   }
 
   const handlePasswordChange = (e) => {
@@ -22,12 +24,12 @@ function Login () {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const response = await login(email, password)
-    if (response.status === 200) {
-      handleLogin()
+    const response = await register(name, email, password)
+    if (response.status === 201) {
+      alert(response.message)
       navigate('/')
     }
-    if (response.status === 401) {
+    if (response.status === 409) {
       alert(response.message)
     }
     if (response.status === 500) {
@@ -40,8 +42,12 @@ function Login () {
         <Grid container spacing={1}>
           <Grid item xs={12} sm={8} md={6}>
             <div>
-              <h2>Login</h2>
+              <h2>Registrarse</h2>
               <form onSubmit={handleSubmit}>
+                <div>
+                  <label>Nombre:</label>
+                  <input type='name' value={name} onChange={handleNameChange} required />
+                </div>
                 <div>
                   <label>Email:</label>
                   <input type='email' value={email} onChange={handleEmailChange} required />
@@ -50,9 +56,8 @@ function Login () {
                   <label>Password:</label>
                   <input type='password' value={password} onChange={handlePasswordChange} required />
                 </div>
-                <button type='submit'>Login</button>
+                <button type='submit'>Register</button>
               </form>
-              <button onClick={() => navigate('/register')}>Register</button>
             </div>
           </Grid>
         </Grid>
@@ -61,4 +66,4 @@ function Login () {
   )
 }
 
-export default Login
+export default Register
