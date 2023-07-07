@@ -18,6 +18,7 @@ import Box from '@mui/material/Box'
 import Fab from '@mui/material/Fab'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import Fade from '@mui/material/Fade'
+import Icons from '../Icons/Icons'
 
 function HideOnScroll (props) {
   const { children, window } = props
@@ -131,6 +132,9 @@ function NavBar (props) {
                 <ContactPageIcon sx={{ display: { md: 'flex' }, mr: 1 }} />
                 <Typography textAlign='center'>Contactame</Typography>
               </MenuItem>
+              <div style={{ marginLeft: 'auto' }}>
+                <Icons />
+              </div>
             </Toolbar>
           </Container>
         </AppBar>
