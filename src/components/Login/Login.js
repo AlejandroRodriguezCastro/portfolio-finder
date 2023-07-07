@@ -26,13 +26,15 @@ function Login () {
     if (response.status === 200) {
       handleLogin()
       navigate('/')
-    }
-    if (response.status === 401) {
+    } else {
       alert(response.message)
     }
-    if (response.status === 500) {
-      alert(response.message)
-    }
+    // if (response.status === 401) {
+    //   alert(response.message)
+    // }
+    // if (response.status === 500) {
+    //   alert(response.message)
+    // }
   }
   return (
     <>

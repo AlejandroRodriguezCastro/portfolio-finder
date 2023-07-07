@@ -49,7 +49,6 @@ export default function ColumnTypesGrid () {
             readed: contact.readed
           })))
         }
-        console.log('contacts', contacts)
       } catch (error) {
         console.error('Error fetching contacts:', error)
       }
@@ -69,8 +68,6 @@ export default function ColumnTypesGrid () {
 
   const doubleClickHandler = useCallback(
     (params, event) => {
-      console.log(params)
-      console.log(event)
       setSelectedId(params.row.id)
       setSelectedName(params.row.name)
       setSelectedEmail(params.row.email)
@@ -84,7 +81,6 @@ export default function ColumnTypesGrid () {
   const updateContactReadStatus = useCallback(
     async (id) => {
       const updatedContact = { ...rows.find((row) => row.id === id), readed: true }
-      console.log('updatedContact', updatedContact)
       updateContact(id, updatedContact)
       window.location.reload()
     },
@@ -93,7 +89,6 @@ export default function ColumnTypesGrid () {
 
   const handleClose = () => {
     setOpen(false)
-    console.log('selectedId', selectedId)
     updateContactReadStatus(selectedId)
   }
 
