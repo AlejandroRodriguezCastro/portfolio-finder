@@ -2,6 +2,11 @@ import React from 'react'
 import HardSkillsCarousel from '../components/Home/HardSkillsCarousel'
 import Experience from '../components/Home/Experience'
 import { Grid, Typography } from '@mui/material'
+import Language from '../components/Home/Language'
+import SoftSkills from '../components/Home/SoftSkills'
+import Certifications from '../components/Home/Certifications'
+import Education from '../components/Home/Education'
+import Icons from '../components/Icons/Icons'
 
 function Home () {
   return (
@@ -46,11 +51,40 @@ function Home () {
           Mi enfoque es dar soluciones efectivas para poder llegar a los objetivos.
         </p>
       </div>
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={4} md={6}>
+          <div>
+            <Language />
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
+          <div>
+            <SoftSkills />
+          </div>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={1}>
+        <Grid item xs={12} sm={4} md={6}>
+          <div>
+            <Education />
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
+          <div>
+            <Certifications />
+          </div>
+        </Grid>
+      </Grid>
+
       <div>
         <Experience />
       </div>
       <div>
         <HardSkillsCarousel />
+      </div>
+      <div>
+        <Icons />
       </div>
     </>
   )

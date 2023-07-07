@@ -10,148 +10,155 @@ import Typography from '@mui/material/Typography'
 
 export default function CustomizedTimeline () {
   return (
-    <Timeline position='alternate'>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          align='right'
-          variant='body2'
-          color='text'
-        >
-          2023 al Presente
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Boehringer Ingelheim
-          </Typography>
-          <Typography variant='subtitle1'>CyberSecurity Automation</Typography>
-          <Typography variant='body2'>Automatizaciones de Azure Sentinel, Service Now</Typography>
-          <Typography variant='body2'>Programación en Python</Typography>
-          <Typography variant='body2'>Dialogo activo con stake holders</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          variant='body2'
-          color='text'
-        >
-          2021-2023
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Loni
-          </Typography>
-          <Typography variant='subtitle1'>Network Automation Engineer</Typography>
-          <Typography variant='body2'>Automatizaciones de redes</Typography>
-          <Typography variant='body2'>Programación en Python</Typography>
-          <Typography variant='body2'>Manejo de Django DRF</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          align='right'
-          variant='body2'
-          color='text'
-        >
-          2020-2021
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Telecom
-          </Typography>
-          <Typography variant='subtitle1'>Network Automation Engineer</Typography>
-          <Typography variant='body2'>Automatizaciones de redes Cisco y Huawei</Typography>
-          <Typography variant='body2'>Creacion de Framework de trabajo</Typography>
-          <Typography variant='body2'>Coordinación de celula</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          variant='body2'
-          color='text'
-        >
-          2019-2020
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Telecom
-          </Typography>
-          <Typography variant='subtitle1'>DevOps Engineer</Typography>
-          <Typography variant='body2'>Automatizaciones de servidores</Typography>
-          <Typography variant='body2'>Creación de ambiente en Linux</Typography>
-          <Typography variant='body2'>Pipelines CI/CD</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          align='right'
-          variant='body2'
-          color='text'
-        >
-          2016-2019
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Telecom
-          </Typography>
-          <Typography variant='subtitle1'>Referente Tecnico en Networking</Typography>
-          <Typography variant='body2'>Coordinación de equipo</Typography>
-          <Typography variant='body2'>Resolución de problemas de networking</Typography>
-          <Typography variant='body2'>Coordinación de tecnicos a nivel país</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineOppositeContent
-          sx={{ m: 'auto 0' }}
-          variant='body2'
-          color='text'
-        >
-          2011-2016
-        </TimelineOppositeContent>
-        <TimelineSeparator>
-          <TimelineConnector />
-          <TimelineDot />
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-          <Typography variant='h5' component='span'>
-            Telecom
-          </Typography>
-          <Typography variant='subtitle1'>Analista de Networking</Typography>
-          <Typography variant='body2'>Configuración de equipos Cisco, Juniper y Huawei</Typography>
-          <Typography variant='body2'>Creación de ambiente en Linux</Typography>
-          <Typography variant='body2'>Pipelines CI/CD</Typography>
-        </TimelineContent>
-      </TimelineItem>
-    </Timeline>
+    <>
+      <Typography>
+        <h1 style={{ paddingBottom: 15 }} className='heading'>
+          Experiencia Laboral{' '}
+        </h1>
+      </Typography>
+      <Timeline position='alternate'>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            align='right'
+            variant='body2'
+            color='text'
+          >
+            2023 al Presente
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Boehringer Ingelheim
+            </Typography>
+            <Typography variant='subtitle1'>CyberSecurity Automation</Typography>
+            <Typography variant='body2'>Automatizaciones de Azure Sentinel, Service Now</Typography>
+            <Typography variant='body2'>Programación en Python</Typography>
+            <Typography variant='body2'>Dialogo activo con stake holders</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            variant='body2'
+            color='text'
+          >
+            2021-2023
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Loni
+            </Typography>
+            <Typography variant='subtitle1'>Network Automation Engineer</Typography>
+            <Typography variant='body2'>Automatizaciones de redes</Typography>
+            <Typography variant='body2'>Programación en Python</Typography>
+            <Typography variant='body2'>Manejo de Django DRF</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            align='right'
+            variant='body2'
+            color='text'
+          >
+            2020-2021
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Telecom
+            </Typography>
+            <Typography variant='subtitle1'>Network Automation Engineer</Typography>
+            <Typography variant='body2'>Automatizaciones de redes Cisco y Huawei</Typography>
+            <Typography variant='body2'>Creacion de Framework de trabajo</Typography>
+            <Typography variant='body2'>Coordinación de celula</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            variant='body2'
+            color='text'
+          >
+            2019-2020
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Telecom
+            </Typography>
+            <Typography variant='subtitle1'>DevOps Engineer</Typography>
+            <Typography variant='body2'>Automatizaciones de servidores</Typography>
+            <Typography variant='body2'>Creación de ambiente en Linux</Typography>
+            <Typography variant='body2'>Pipelines CI/CD</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            align='right'
+            variant='body2'
+            color='text'
+          >
+            2016-2019
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Telecom
+            </Typography>
+            <Typography variant='subtitle1'>Referente Tecnico en Networking</Typography>
+            <Typography variant='body2'>Coordinación de equipo</Typography>
+            <Typography variant='body2'>Resolución de problemas de networking</Typography>
+            <Typography variant='body2'>Coordinación de tecnicos a nivel país</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            variant='body2'
+            color='text'
+          >
+            2011-2016
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant='h5' component='span'>
+              Telecom
+            </Typography>
+            <Typography variant='subtitle1'>Analista de Networking</Typography>
+            <Typography variant='body2'>Configuración de equipos Cisco, Juniper y Huawei</Typography>
+            <Typography variant='body2'>Creación de ambiente en Linux</Typography>
+            <Typography variant='body2'>Pipelines CI/CD</Typography>
+          </TimelineContent>
+        </TimelineItem>
+      </Timeline>
+    </>
   )
 }

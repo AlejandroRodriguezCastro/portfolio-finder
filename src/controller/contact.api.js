@@ -1,15 +1,15 @@
 import urlWebServices from './constants.api.js'
 
-const saveContact = async (name, phone, email, message) => {
+const saveContact = async (name, email, message, phone) => {
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
 
     const raw = JSON.stringify({
       name,
-      phone,
       email,
-      message
+      message,
+      phone
     })
 
     const requestOptions = {
@@ -52,7 +52,7 @@ const getContacts = async () => {
     switch (response.status) {
       case 200:
       {
-        return ({ status: 200, message: 'Contactos obtenidos' })
+        return ({ status: 200, message: jsonData })
       }
       case 401:
       {
@@ -138,4 +138,42 @@ const deleteContact = async (id) => {
   }
 }
 
-export { saveContact, getContacts, getContactById, deleteContact }
+const updateContact = async (id, body) => {
+  try {
+    const myHeaders = new Headers()
+    myHeaders.append('Content-Type', 'application/json')
+    const raw = JSON.stringify(
+      body)
+    console.log('raw', raw)
+
+    const requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    }
+    const response = await fetch(`${urlWebServices.contact}/${id}`, requestOptions)
+    const jsonData = await response.json()
+    console.log(jsonData)
+    switch (response.status) {
+      case 200:
+      {
+        return ({ status: 200, message: 'Contacto actualizado' })
+      }
+      case 401:
+      {
+        return ({ status: 401, message: 'Usuario no autenticado' })
+      }
+      case 404:
+      {
+        return ({ status: 404, message: 'Contacto no encontrado' })
+      }
+      default:
+        return ({ status: 500, message: 'Error interno del servidor' })
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { saveContact, getContacts, getContactById, deleteContact, updateContact }

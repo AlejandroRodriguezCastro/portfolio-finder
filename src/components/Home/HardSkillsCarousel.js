@@ -12,7 +12,11 @@ import {
 const HardSkillsCarousel = () => {
   return (
     <div style={{ marginTop: '50px', color: '#494949', padding: '0px' }}>
-      <Typography variant='h4'>Hard Skills</Typography>
+      <Typography>
+        <h1 style={{ paddingBottom: 15 }} className='heading'>
+          Hard Skills{' '}
+        </h1>
+      </Typography>
       <br />
       <Carousel
         className='HardSkills'

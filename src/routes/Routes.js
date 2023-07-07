@@ -3,21 +3,21 @@ import Home from '../pages/Home'
 import Login from '../components/Login/Login'
 import Contact from '../components/Contact/Contact'
 import Navbar from '../components/AppBar/Navbar'
-// import { useContext } from 'react'
-// import { AuthContext } from '../utils/AuthContext'
+import { useContext } from 'react'
+import { AuthContext } from '../utils/AuthContext'
 import ContactList from '../components/ContactList/ContactList'
 import Register from '../components/Login/Register'
 
 export const RouteMap = () => {
-  // const { authenticated } = useContext(AuthContext)
+  const { authenticated } = useContext(AuthContext)
   return (
     <Router>
       <Navbar />
       <Routes>
-        {/* <Route
+        <Route
           path='/contact-list'
           element={authenticated ? <ContactList /> : <Navigate to='/login' />}
-        /> */}
+        />
         <Route path='/contact-list' element={<ContactList />} />
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
