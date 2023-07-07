@@ -7,8 +7,34 @@ import SoftSkills from '../components/Home/SoftSkills'
 import Certifications from '../components/Home/Certifications'
 import Education from '../components/Home/Education'
 import Icons from '../components/Icons/Icons'
+import Fab from '@mui/material/Fab'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
+import Slide from '@mui/material/Slide'
 
-function Home () {
+function ScrollToTop (props) {
+  const trigger = useScrollTrigger({
+    threshold: 100,
+    disableHysteresis: true
+  })
+
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
+  return (
+    <Slide appear={false} direction='up' in={trigger}>
+      <Fab onClick={handleClick} style={{ position: 'fixed', bottom: 20, right: 20 }} {...props}>
+        <KeyboardArrowUpIcon />
+      </Fab>
+    </Slide>
+  )
+}
+
+function Home (props) {
   return (
     <>
       <div style={{ marginTop: '60px', padding: '0px' }}>
@@ -86,6 +112,7 @@ function Home () {
       <div>
         <Icons />
       </div>
+      <ScrollToTop {...props} />
     </>
   )
 }

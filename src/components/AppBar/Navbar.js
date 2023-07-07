@@ -13,10 +13,6 @@ import { AuthContext } from '../../utils/AuthContext'
 import Slide from '@mui/material/Slide'
 import PropTypes from 'prop-types'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
-import Box from '@mui/material/Box'
-import Fab from '@mui/material/Fab'
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
-import Fade from '@mui/material/Fade'
 import Icons from '../Icons/Icons'
 import Badge from '@mui/material/Badge'
 import Stack from '@mui/material/Stack'
@@ -37,44 +33,6 @@ function HideOnScroll (props) {
 }
 
 HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func
-}
-
-function ScrollTop (props) {
-  const { children, window } = props
-  const triggerScrollUp = useScrollTrigger({
-    target: window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: 100
-  })
-
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor'
-    )
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center'
-      })
-    }
-  }
-
-  return (
-    <Fade in={triggerScrollUp}>
-      <Box
-        onClick={handleClick}
-        role='presentation'
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      >
-        {children}
-      </Box>
-    </Fade>
-  )
-}
-
-ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func
 }
@@ -171,11 +129,6 @@ function NavBar (props) {
           </Container>
         </AppBar>
       </HideOnScroll>
-      <ScrollTop {...props}>
-        <Fab size='small' aria-label='scroll back to top'>
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
     </>
   )
 }
