@@ -96,13 +96,15 @@ function NavBar (props) {
 
   useEffect(() => {
     setLoginAuth(authenticated)
-    getMessages()
-    const refreshInterval = setInterval(() => {
+    if (authenticated) {
       getMessages()
-    }, 60 * 1000)
+      const refreshInterval = setInterval(() => {
+        getMessages()
+      }, 60 * 1000)
 
-    return () => {
-      clearInterval(refreshInterval)
+      return () => {
+        clearInterval(refreshInterval)
+      }
     }
   }, [authenticated])
 
@@ -145,12 +147,16 @@ function NavBar (props) {
               {loginAuth
                 ? (
                   <MenuItem component={Link} to='/contact-list' key='ContactList'>
-                    <Stack sx={{ display: { md: 'flex', mr: '2' } }}>
-                      <Badge badgeContent={badgeCount} color='error' sx={{ display: { md: 'flex', mr: '1' } }}>
-                        <MailIcon sx={{ display: { md: 'flex', mr: '10' } }} />
-                      </Badge>
-                    </Stack>
-                    <Typography textAlign='center' sx={{ display: { mr: '10' } }}>Mensajes</Typography>
+                    <div>
+                      <Stack>
+                        <Badge badgeContent={badgeCount} color='error'>
+                          <MailIcon />
+                        </Badge>
+                      </Stack>
+                    </div>
+                    <div style={{ marginLeft: '15px' }}>
+                      <Typography textAlign='center'>Mensajes</Typography>
+                    </div>
                   </MenuItem>
                   )
                 : null}
