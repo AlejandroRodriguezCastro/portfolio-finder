@@ -8,7 +8,6 @@ import MenuItem from '@mui/material/MenuItem'
 import ContactPageIcon from '@mui/icons-material/ContactPage'
 import { Link } from 'react-router-dom'
 import LoginIcon from '@mui/icons-material/Login'
-import EmailIcon from '@mui/icons-material/Email'
 import LogoutIcon from '@mui/icons-material/Logout'
 import { AuthContext } from '../../utils/AuthContext'
 import Slide from '@mui/material/Slide'
@@ -19,6 +18,10 @@ import Fab from '@mui/material/Fab'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import Fade from '@mui/material/Fade'
 import Icons from '../Icons/Icons'
+import Badge from '@mui/material/Badge'
+import Stack from '@mui/material/Stack'
+import MailIcon from '@mui/icons-material/Mail'
+import { getContacts } from '../../controller/contact.api'
 
 function HideOnScroll (props) {
   const { children, window } = props
@@ -79,9 +82,28 @@ ScrollTop.propTypes = {
 function NavBar (props) {
   const { handleLogout, authenticated } = useContext(AuthContext)
   const [loginAuth, setLoginAuth] = useState(false)
+  const [badgeCount, setBadgeCount] = useState(0)
+
+  const getMessages = async () => {
+    try {
+      const contacts = await getContacts()
+      const unreadMessages = contacts.message.filter((contact) => !contact.readed)
+      setBadgeCount(unreadMessages.length)
+    } catch (error) {
+      console.error('Error fetching messages:', error)
+    }
+  }
 
   useEffect(() => {
     setLoginAuth(authenticated)
+    getMessages()
+    const refreshInterval = setInterval(() => {
+      getMessages()
+    }, 60 * 1000)
+
+    return () => {
+      clearInterval(refreshInterval)
+    }
   }, [authenticated])
 
   const handleButtonLogout = () => {
@@ -123,8 +145,12 @@ function NavBar (props) {
               {loginAuth
                 ? (
                   <MenuItem component={Link} to='/contact-list' key='ContactList'>
-                    <EmailIcon sx={{ display: { md: 'flex' }, mr: 1 }} />
-                    <Typography textAlign='center'>Mensajes</Typography>
+                    <Stack sx={{ display: { md: 'flex', mr: '2' } }}>
+                      <Badge badgeContent={badgeCount} color='error' sx={{ display: { md: 'flex', mr: '1' } }}>
+                        <MailIcon sx={{ display: { md: 'flex', mr: '10' } }} />
+                      </Badge>
+                    </Stack>
+                    <Typography textAlign='center' sx={{ display: { mr: '10' } }}>Mensajes</Typography>
                   </MenuItem>
                   )
                 : null}

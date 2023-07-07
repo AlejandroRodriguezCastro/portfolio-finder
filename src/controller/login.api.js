@@ -24,7 +24,7 @@ const login = async (email, password) => {
       case 200:
       {
         console.log('Login success')
-        window.sessionStorage.setItem('accessToken', jsonData.token)
+        window.sessionStorage.setItem('jwt', jsonData.token)
         return ({ status: 200, message: 'Login success' })
       }
       case 401:

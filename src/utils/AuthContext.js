@@ -3,15 +3,17 @@ import { createContext, useState } from 'react'
 export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [authenticated, setAuthenticated] = useState(false)
+  const [authenticated, setAuthenticated] = useState(window.sessionStorage.getItem('jwt'))
 
   const handleLogin = () => {
-    setAuthenticated(true)
+    if (window.sessionStorage.getItem('jwt')) {
+      setAuthenticated(true)
+    }
   }
 
   const handleLogout = () => {
     setAuthenticated(false)
-    window.sessionStorage.removeItem('accessToken')
+    window.sessionStorage.removeItem('jwt')
   }
 
   return (

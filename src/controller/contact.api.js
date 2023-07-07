@@ -39,6 +39,12 @@ const getContacts = async () => {
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    if (window.sessionStorage.getItem('jwt') !== null) {
+      const token = window.sessionStorage.getItem('jwt')
+      myHeaders.append('jwt', token)
+    } else {
+      return ({ status: 401, message: 'No autorizado' })
+    }
 
     const requestOptions = {
       method: 'GET',
@@ -74,6 +80,12 @@ const getContactById = async (id) => {
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    if (window.sessionStorage.getItem('jwt') !== null) {
+      const token = window.sessionStorage.getItem('jwt')
+      myHeaders.append('jwt', token)
+    } else {
+      return ({ status: 401, message: 'No autorizado' })
+    }
 
     const requestOptions = {
       method: 'GET',
@@ -108,6 +120,12 @@ const deleteContact = async (id) => {
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    if (window.sessionStorage.getItem('jwt') !== null) {
+      const token = window.sessionStorage.getItem('jwt')
+      myHeaders.append('jwt', token)
+    } else {
+      return ({ status: 401, message: 'No autorizado' })
+    }
 
     const requestOptions = {
       method: 'DELETE',
@@ -142,6 +160,13 @@ const updateContact = async (id, body) => {
   try {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
+    if (window.sessionStorage.getItem('jwt') !== null) {
+      const token = window.sessionStorage.getItem('jwt')
+      myHeaders.append('jwt', token)
+    } else {
+      return ({ status: 401, message: 'No autorizado' })
+    }
+
     const raw = JSON.stringify(
       body)
     console.log('raw', raw)
